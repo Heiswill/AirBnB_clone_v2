@@ -20,7 +20,7 @@ def hbnb():
 @app.route('/c/<text>', strict_slashes=False)
 def c_texts():
     """ Prints a messages when /c/text is called """
-    return "C %s" % escape(text)
+    return "C " + text.replace('_', ' ')
 
 
 if __name__ == "__main__":
