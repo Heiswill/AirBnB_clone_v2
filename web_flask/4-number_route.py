@@ -24,14 +24,14 @@ def c_is_fun(text):
 
 @app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
-def pythonIsCool(text='is_cool'):
-    """ Prints a message when /python is called """
+def python_is_cool(text='is_cool'):
+    """ Prints a Message when /python is called """
     return "Python " + text.replace('_', ' ')
 
 
-@app.route('/number/int:<n>', strict_slashes=False)
-def intNumber(n):
-    """ Prints message only if n is an interger """
+@app.route('/number/<int:n>', strict_slashes=False)
+def n_is_number(n):
+    """ Prints a Message when /number is called only if n is an integer"""
     return "{:d} is a number".format(n)
 
 if __name__ == "__main__":
