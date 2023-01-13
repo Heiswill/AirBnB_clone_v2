@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ A script that starts a flask web application"""
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 
@@ -33,6 +33,14 @@ def python_is_cool(text='is_cool'):
 def n_is_number(n):
     """ Prints a Message when /number is called only if n is an integer"""
     return "{:d} is a number".format(n)
+
+
+@app.route('/number_template/int:<n>', strict_slashes=False)
+def htmlpage(n):
+    """ Display html page when /number_template is called
+    if only n is an integer """
+    return render_template('5-number.html', value=n)
+
 
 if __name__ == "__main__":
     """ Main Function """
