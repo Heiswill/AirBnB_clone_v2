@@ -10,6 +10,8 @@ import uuid
 Base = declarative_base()
 
 s = "HBNB_TYPE_STORAGE"
+
+
 class BaseModel:
     """This class will defines all common attributes/methods
     for other classes
